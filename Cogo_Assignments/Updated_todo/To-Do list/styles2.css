@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form select,
+.form button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form input[type="text"],
+.form input[type="date"] {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.form button {
+  flex-basis: 100%;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+}
+
+#taskList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.task.completed {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  text-decoration: line-through;
+}
+
+.task:hover {
+  transform: translateY(-4px);
+}
+
+.task .task-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.task .subtask {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.task .subtask-checkbox {
+  margin-right: 8px;
+}
+
+.task .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task .buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task .buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Add styling for Backlogs, Activity Logs, Search, Sort, Reminder, etc., if needed */
+
+@media (max-width: 600px) {
+  .form input[type="text"],
+  .form input[type="date"],
+  .form select,
+  .form button {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}

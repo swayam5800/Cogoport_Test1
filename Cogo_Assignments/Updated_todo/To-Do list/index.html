@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="styles2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>To-Do List</h1>
+      <div class="innerContainer">
+        <input type="text" id="taskInput" placeholder="Enter task" />
+        <select id="categorySelect">
+          <option value="" disabled selected>Select a Category</option>
+        </select>
+        <input type="date" id="dueDateInput" />
+        <div id="priorityContainer">
+          <label for="priorityInput">Priority:</label>
+          <select name="priorityInput" id="priorityInput">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <button id="addTaskButton" onclick="addTask()">Add Task</button>
+      </div>
+      <div class="category-container">
+        <input
+          type="text"
+          id="newCategoryInput"
+          placeholder="New Category..."
+        />
+        <button id="addCategoryButton" onclick="addCategory()">
+          Add Category
+        </button>
+        <button id="removeCategoryButton" onclick="removeCategory()">
+          Remove Category
+        </button>
+      </div>
+
+      <button id="sortByDueDateButton">Sort by Due Date</button>
+      <button id="sortByPriorityButton">Sort by Priority</button>
+
+      <div class="filters">
+        <label>Filter by Due Date:</label>
+        <input type="date" id="dueDateFilter" onchange="filterTasks()" />
+        <label>Filter by Category:</label>
+        <select id="categoryFilter" onchange="filterTasks()">
+          <option value="" selected>All Categories</option>
+        </select>
+        <label>Filter by Priority:</label>
+        <select id="priorityFilter" onchange="filterTasks()">
+          <option value="" selected>All Priorities</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+
+      <div class="backlogs">
+        <button id="viewPendingButton">View Pending Tasks</button>
+        <button id="viewMissedButton">View Missed Tasks</button>
+      </div>
+      <ol id="activityLog"></ol>
+
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Search tasks" />
+        <select id="searchType">
+          <option value="exactTodo">Exact Todo</option>
+          <option value="subtasks">Sub-tasks</option>
+          <option value="similarWords">Similar Words</option>
+          <option value="partialSearch">Partial Search</option>
+          <option value="tags">Tags</option>
+        </select>
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <ul
+        id="taskList"
+        ondragstart="dragStart(event)"
+        ondragover="dragOver(event)"
+        ondrop="drop(event)"
+        ondragend="dragEnd(event)"
+      ></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
